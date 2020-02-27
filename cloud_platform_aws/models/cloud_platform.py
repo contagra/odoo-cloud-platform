@@ -26,7 +26,7 @@ class CloudPlatform(models.AbstractModel):
         return kinds
 
     @api.model
-    def _config_by_server_env_for_exoscale(self):
+    def _config_by_server_env_for_aws(self):
         configs = {
             'prod': PlatformConfig(filestore=FilestoreKind.s3),
             'stage': PlatformConfig(filestore=FilestoreKind.s3),
@@ -35,5 +35,5 @@ class CloudPlatform(models.AbstractModel):
         return configs
 
     @api.model
-    def install_exoscale(self):
+    def install_aws(self):
         self.install('aws')
