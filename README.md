@@ -145,10 +145,11 @@ attachments to the object storage.
 
 From `anthem`, it can be called like this:
     `ctx.env['cloud.platform'].install(cloud_platform_kind)`
-Replacing `cloud_platform_kind` with 'exoscale' or 'ovh'
+Replacing `cloud_platform_kind` with 'aws', 'exoscale' or 'ovh'
 
 Or using one of the direct shortcuts:
 
+ * `ctx.env['cloud.platform'].install_aws()`
  * `ctx.env['cloud.platform'].install_exoscale()`
  * `ctx.env['cloud.platform'].install_ovh()`
 

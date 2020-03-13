@@ -132,7 +132,7 @@ class CloudPlatform(models.AbstractModel):
             assert use_s3, (
                 "S3 must be used on production and stage instances. "
                 "It is activated by setting 'ir_attachment.location.' to 's3'."
-                " The 'install_exoscale()' function sets this option "
+                " The 'install_aws()' function sets this option "
                 "automatically.")
         if use_s3:
             assert os.environ.get('AWS_ACCESS_KEY_ID'), (
