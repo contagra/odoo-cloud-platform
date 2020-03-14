@@ -151,17 +151,17 @@ class CloudPlatform(models.AbstractModel):
                 "integration/prod bucket).\n"
                 "If you don't actually need a bucket, change the"
                 " 'ir_attachment.location' parameter.")
-            prod_bucket = bool(re.match(r'[a-z-0-9]+-odoo-prod', bucket_name))
-            if environment_name == 'prod':
-                assert prod_bucket, (
-                    "AWS_BUCKETNAME should match '<client>-odoo-prod', "
-                    "we got: '%s'" % (bucket_name, ))
-            else:
-                # if we are using the prod bucket on another instance
-                # such as an integration, we must be sure to be in read only!
-                assert not prod_bucket, (
-                    "AWS_BUCKETNAME should not match '<client>-odoo-prod', "
-                    "we got: '%s'" % (bucket_name, ))
+            # prod_bucket = bool(re.match(r'[a-z-0-9]+-odoo-prod', bucket_name))
+            # if environment_name == 'prod':
+            #     assert prod_bucket, (
+            #         "AWS_BUCKETNAME should match '<client>-odoo-prod', "
+            #         "we got: '%s'" % (bucket_name, ))
+            # else:
+            #     # if we are using the prod bucket on another instance
+            #     # such as an integration, we must be sure to be in read only!
+            #     assert not prod_bucket, (
+            #         "AWS_BUCKETNAME should not match '<client>-odoo-prod', "
+            #         "we got: '%s'" % (bucket_name, ))
 
         elif environment_name == 'test':
             # store in DB so we don't have files local to the host
