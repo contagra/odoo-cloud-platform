@@ -1,0 +1,5 @@
+<odoo>
+  <data>
+    <function model="cloud.platform" name="install_aws"/>
+  </data>
+</odoo>
